@@ -1,0 +1,4 @@
+<!--{{ (af.auth | async)?.uid }}-->
+<!--button (click)="login()">Login With Twitter</button-->
+<button *ngIf="!(af.auth | async)?.uid" (click)="overrideLogin()">Login</button>
+<button *ngIf="(af.auth | async)?.uid" (click)="signOut()">Logout</button>

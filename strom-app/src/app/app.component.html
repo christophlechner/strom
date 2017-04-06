@@ -1,0 +1,10 @@
+<app-header></app-header>
+<h1>
+  {{title}}
+</h1>
+uid{{af.auth.uid}}
+<div> {{ (af.auth | async)?.uid }} </div>
+<div *ngIf="!(af.auth | async)?.uid">Bitte einloggen</div>
+<button (click)="login()">Login With Twitter</button>
+<button (click)="overrideLogin()">Login Anonymously</button>
+<router-outlet ></router-outlet>
